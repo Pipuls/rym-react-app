@@ -7,10 +7,12 @@ export default function Characters(props){
 
     return (
     <div className="characters">
-        <h1>
+        <h2>
             Personajes
-        </h1>
-        <span className="back-home" onClick={resetCharacters}>Volver</span>
+        </h2>
+        <button onClick={resetCharacters} className="btn-search back-home">
+        Volver
+            </button>
         <div className="container-characters">
             {characters.map((character, index) => (
                 <div className="character-container" key="{index}">
@@ -33,6 +35,11 @@ export default function Characters(props){
                             )}
                         </h6>
                         <p>
+                        <span className="text-gray">Género: </span>
+                        <span> {character.gender} </span>
+                        </p>
+                        <p></p>
+                        <p>
                         <span className="text-gray">Episodios: </span>
                         <span> {character.episode.length} </span>
                         </p>
@@ -40,11 +47,14 @@ export default function Characters(props){
                         <span className="text-gray">Especie: </span>
                         <span> {character.species} </span>
                         </p>
+                       
                       </div>
                 </div>
             ))}
         </div>
-        <span className="back-home" onClick={resetCharacters}>Volver</span>
+        <button onClick={resetCharacters} className="btn-search back-home">
+        Volver
+            </button>
     </div>
     );
 }
